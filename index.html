@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<script>
+    var dojoConfig={
+        parseOnLoad:false,
+        isDebug:true,
+        async:true,
+        baseUrl:'/HotelProject/',
+        packages:[
+            {
+                name:'dojo',
+                location:'node_modules/dojo'
+            },
+            {
+                name:'dijit',
+                location:'node_modules/dijit'
+            },{
+                name:'dojox',
+                location:'node_modules/dojox'
+            },{
+                name:'js',
+                location:'./js'
+            },
+            {
+                name:'layouts',
+                location:'./layouts'
+            }],
+
+    }
+</script>
+<script src="node_modules/dojo/dojo.js"></script>
+<script src="lib/js/jquery-1.12.4.min.js"></script>
+<script src="lib/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="node_modules/dijit/themes/soria/soria.css">
+<link rel="stylesheet" href="lib/css/bootstrap.min.css">
+<link rel="stylesheet" href="lib/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/styles.css">
+
+<body class="soria" >
+<div id="_mainBody" class="mainContainer" data-dojo-type="js/controllers/MainController">
+
+</div>
+
+</body>
+<script>
+    require(['dojo/parser','dojo/domReady!'], function (parser) {
+        parser.parse();
+
+    });
+</script>
+</html>

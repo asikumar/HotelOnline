@@ -1,0 +1,280 @@
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+a, a:hover {
+	text-decoration: none;
+	color: #464444;
+}
+body {
+  
+}
+.strong {
+	font-weight: bold;
+}
+
+ /*
+  * See https://github.com/angular/angular.io/blob/master/public/docs/_examples/styles.css
+  * for the full set of master styles used by the documentation samples
+  */
+  
+  .page-container {
+	padding: 0 10px;
+  }
+  
+  /* Header */
+  /* Nav */
+  .top-nav {
+	margin-top: 30px;
+  }
+  .navbar-nav>li>a {
+	color: #464444;
+	transition: linear .2s;
+	padding-top: 6px;
+    padding-bottom: 6px
+  }
+  .navbar-nav>li>a:hover, 
+  .nav>li>a:focus {
+	background: none;
+  }
+  
+  .contact-no {
+	position: absolute;
+	right: 15px;
+	top: 8px;
+  }
+  .contact-no>span {
+	vertical-align: middle;
+  }
+  
+  /* Footer */
+  #footer {
+	background: #2e2d2d;
+	padding: 20px 0;
+	color: #5E5E5E;
+}
+.footer-menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.footer-menu>a {
+	display: inline-block;
+	line-height: 18px;
+	color: #5E5E5E;
+	margin: 0 6px;
+}
+.footer-menu>a:first-child {
+	margin-left: 0;
+}
+.footer-menu>a:hover {
+	color: #EBEDED;
+}
+.social-block {}
+.copy-text {
+	margin: 24px 0 0;
+}
+.social-icon>a {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin: 0 3px;
+}
+.social-icon>a>img {
+	width: 100%;
+	opacity: .3;
+	transition: linear .2s;
+}
+.social-icon>a:hover>img{
+	opacity: 1;
+}
+
+/*  */
+.carousel {
+	margin-bottom: 25px !important;
+}
+.carousel-control.right, .carousel-control.left {
+	background: none;
+}
+.welcome-title {
+	margin: 0 0 10px;
+}
+.sections {
+	border-bottom: 1px solid #d9d9d9;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+.sections:last-child {
+	border: none;
+}
+.content-title {
+	margin: 0 0 10px;
+}
+.pos-rel {
+	position: relative;
+}
+.overlay {
+	background: rgba(0, 0, 0, .5);
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+.offer-col img,
+.offer-banner img,
+.details-box img,
+.list img {
+	max-width: 100%;
+}
+.offer-col>a {
+	display: block;
+	position: absolute;
+	left: 10px;
+	right: 10px;
+	top: 0;
+	bottom: 0;
+	z-index: 1;
+}
+
+.offer-col .box-caption {
+	position: absolute;
+	left: 10px;
+	top: 0;
+	right: 10px;
+	bottom: 0;
+	padding: 70px;
+}
+.offer-col .box-caption>h2 {	
+	color: #fff;
+	font-size: 20px;
+}
+.explore-sec .offer-col {
+	margin-bottom: 20px;
+}
+.offer-banner {
+	position: relative;
+	height: 240px;
+	overflow: hidden;
+}
+.deals-text {
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+	display: block;
+	top: 80px;
+	color: #fff;
+	font-size: 35px;
+	text-shadow: 0 3px 3px #000;
+}
+.title-small {
+	font-size: 18px;
+	margin: 0 0 10px;
+}
+.details-box p {
+	margin: 0;
+}
+.city-info {
+	margin-bottom: 20px;
+}
+.list {
+	margin-bottom: 20px;
+}
+.list-title {
+	overflow: hidden;
+    	text-overflow: ellipsis;
+    	white-space: nowrap;
+    	word-wrap: break-word;
+	margin: 5px 0 10px;
+}
+.btn {
+	border-radius: 2px;
+}
+.price-box {
+	position: absolute;
+	left: 0;
+	bottom: 50px;
+	padding: 5px 10px;
+	color: #fff;
+	font-size: 20px;
+	background: rgba(0, 0, 0, .5);
+}
+.price-box:before {
+	border-top: 10px solid rgba(0, 0, 0, .7);
+    	content: "";
+    	display: block;
+    	border-bottom: 10px solid transparent;
+    	border-left: 10px solid transparent;
+    	position: absolute;
+    	left: 0;
+    	bottom: -20px;
+}
+.check-inout-maincontainer:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+.check-inout-maincontainer img {
+	max-width: 100%;
+}
+.hotel-banner-box {
+	margin-bottom: 20px;
+}
+.checkin-box label {
+	display: block;
+}
+.checkin-row {
+	margin-bottom: 15px;
+}
+.checkin-row input[type=text] {
+	padding: 10px;
+	border-radius: 2px;
+	border: 1px solid #dfdddd;
+}
+.amenities-box {
+	margin-bottom: 20px;
+}
+.amenities-box h3 {
+	margin-top: 0;
+}
+.hotel-amenities-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.hotel-amenities-list>li {
+	margin-bottom: 5px;
+	font-size: 16px;
+}
+.hotel-amenities-list>li.amenities-not-available {
+	color: #e3e3e3;
+	text-decoration: line-through;
+}
+.journey-distance-info {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.journey-distance-info>li {
+	overflow: hidden;
+	margin-bottom: 10px;
+	font-size: 16px;
+}
+.journey-distance-info>li label {
+	float: left;
+	width: 300px;
+	font-weight: normal;
+}
+.journey-distance-info>li span {
+	width: 74px;
+	float: left;
+}
+.nearest-box {
+	background: #ddd;
+	padding: 20px;
+}
+.nearest-box h3 {
+	margin-top: 0;
+}

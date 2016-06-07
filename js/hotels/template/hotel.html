@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="check-inout-maincontainer">
+        <div class="row">
+            <div class="col-lg-7 col-md-7">
+                <div class="hotel-banner-box">
+                    <img src='${imageSource}'/>
+                </div>
+                <div class="row amenities-box">
+                    <div class="col-lg-5 col-lg-5">
+                        <h3>Amenities</h3>
+                        <div data-dojo-attach-point = '_hotelAmenities'></div>
+                    </div>
+                    <div class="col-lg-7 col-lg-7">
+                        <h3>Journey</h3>
+                        <div data-dojo-attach-point = '_journyDistance'></div>
+                    </div>
+                </div>
+                <div class="nearest-box">
+                    <h3>Nearest hotel</h3>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <img src="images/image2.jpg"/>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <img src="images/image2.jpg"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-5">
+                <div class="checkin-box">
+                    <div class="row checkin-row">
+                        <div class="col-lg-6 col-md-6">
+                            <label>Check-in</label>
+                            <input type="text" id="checkin-date" />
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <label>Check-out</label>
+                            <input type="text" id="checkout-date" />
+                        </div>
+                    </div>
+                    <div class="row checkin-row">
+                        <div class="col-lg-6 col-md-6">
+                            <label>Room</label>
+                            <input type="text" id="roomselect" />
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <label>Guest</label>
+                            <input type="text" id="guestselect" />
+                        </div>
+                    </div>
+                    <div>
+                        <input type="submit" value="Book now" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
