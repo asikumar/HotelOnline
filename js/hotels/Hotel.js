@@ -19,10 +19,10 @@ define([
             /*TODO Service Call to get the response of hotel clicked by user*/
             postCreate:function(){
                 this.inherited(arguments);
-                this._createAmmentiesList();
-                this._createNearbyFacilities();
+                this._createAmmentiesList(/*response.ammenities*/);
+                this._createNearbyFacilities(/*response.locations*/);
             },
-            _createAmmentiesList: function(/*response*/){
+            _createAmmentiesList: function(/*ammenities*/){
                 var ul = domConstruct.create("ul", {class:"hotel-amenities-list"}, this._hotelAmenities, "first");
                 var amenities = [{title:"Parking",availiblity: true}, {title:"Internet",availiblity: true},
                     {title:"Card accepted",availiblity: true}, {title:"Elevator",availiblity: true}, 
@@ -46,6 +46,22 @@ define([
                     var li = domConstruct.create("li",null, ul);
                     var label = domConstruct.create("label",{innerHTML: data.jrny}, li);
                     var dist = domConstruct.create("span", {innerHTML: data.distnc+'km'},li);
+                });
+            },
+            _createNearHotels: function(){
+                var nearHotel = [
+                    {
+                        "name":"XYZ",
+                        "id":"HTL1001"
+                    },
+                    {
+                        "name":"ABC",
+                        "id":"HTL1002"
+                    }
+                ];
+                arrayUtil.forEach(nearHotel, function(data) {
+                    var div = domConstruct.create("div", {class: "col-lg-6 col-md-6"}, this._nearestHotels, "first");
+                    var img = domConstruct.create("img", {src: "images/image2.jpg"}, div);
                 });
             },
             _setResponseAttr: function(response) {
