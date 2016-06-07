@@ -45,7 +45,7 @@ define([
                 arrayUtil.forEach(nearBy, function(data){
                     var li = domConstruct.create("li",null, ul);
                     var label = domConstruct.create("label",{innerHTML: data.jrny}, li);
-                    var span = domConstruct.create("span", {innerHTML: data.distnc+'km'},li);
+                    var dist = domConstruct.create("span", {innerHTML: data.distnc+'km'},li);
                 });
             },
             _setResponseAttr: function(response) {
