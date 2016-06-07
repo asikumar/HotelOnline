@@ -1,0 +1,9 @@
+define({
+    "com.hotel.service":{
+        "rtrvHoteldetail":{
+            url:'../../stubs/hotel.json',
+            type:'post',
+            contentType:'application/json'
+        }
+    }
+});
