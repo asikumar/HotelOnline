@@ -1,0 +1,48 @@
+{
+  "name":"RANDOM Hotel",
+  "id":"HTL1000",
+  "city":"BBSR",
+  "state":"Odisha",
+  "location":"10.15.25'",
+  "rmType":[
+    {
+      "type":1,
+      "price":"2500",
+      "availble":true
+    },
+    {
+      "type":2,
+      "price":"3800",
+      "availble":true
+    }
+  ],
+  "ammenities":[{"title":"Parking","availiblity": true}, {"title":"Internet","availiblity": true},
+    {"title":"Card accepted","availiblity": true}, {"title":"Elevator","availiblity": true},
+    {"title":"Swimming pool","availiblity": false}, {"title":"Hot water","availiblity": false},
+    {"title":"Conference room","availiblity": true}, {"title":"Bar","availiblity": true},
+    {"title":"Dinning area","availiblity": true}, {"title":"Banquet hall","availiblity": true},
+    {"title":"TV","availiblity": false}, {"title":"Fridge","availiblity": true},
+    {"title":"Complimentary breakfast","availiblity": true}],
+  "locations":[
+    {
+    "place":"",
+    "dist":"4.2"
+    },{
+    "place":"",
+    "dist":"0.5"
+    },{
+    "place":"",
+    "dist":"1.2"
+    }
+  ],
+  "nrbyHtls":[
+    {
+      "name":"XYZ",
+      "id":"HTL1001"
+    },
+    {
+      "name":"ABC",
+      "id":"HTL1002"
+    }
+  ]
+}
