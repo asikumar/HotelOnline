@@ -1,0 +1,11 @@
+{
+  "cities":["bhubaneswar","puri"],
+  "bhubaneswar":{
+    "imagURL":"images/hotel1.jpg",
+    "headingText":"Hotel's in Bhubaneswar"
+  },
+  "puri":{
+    "imagURL":"images/hotel1.jpg",
+    "headingText":"Hotel's in Puri"
+  }
+}
