@@ -21,6 +21,7 @@ define([
                 this.inherited(arguments);
                 this._createAmmentiesList(/*response.ammenities*/);
                 this._createNearbyFacilities(/*response.locations*/);
+                this._createNearHotels();
             },
             _createAmmentiesList: function(/*ammenities*/){
                 var ul = domConstruct.create("ul", {class:"hotel-amenities-list"}, this._hotelAmenities, "first");
@@ -59,9 +60,11 @@ define([
                         "id":"HTL1002"
                     }
                 ];
+                var self = this;
                 arrayUtil.forEach(nearHotel, function(data) {
-                    var div = domConstruct.create("div", {class: "col-lg-6 col-md-6"}, this._nearestHotels, "first");
-                    var img = domConstruct.create("img", {src: "images/image2.jpg"}, div);
+                    var div = domConstruct.create("div", {class: "col-lg-6 col-md-6"}, self._nearestHotels);
+                    var img = domConstruct.toDom("<img src='images/image2.jpg'>");
+                    domConstruct.place(img, div);
                 });
             },
             _setResponseAttr: function(response) {

@@ -1,0 +1,51 @@
+<div>
+    <div class="row">
+<div class="col-lg-5 col-md-5">
+    <div class="checkin-box">
+        <div class="row checkin-row">
+            <div class="col-lg-6 col-md-6">
+                <label>Check-in</label>
+                <input type="text" id="checkin-date" data-dojo-type="dijit/form/DateTextBox"
+                       required="true" />
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <label>Check-out</label>
+                <input type="text" id="checkout-date" data-dojo-type="dijit/form/DateTextBox"
+                       required="true" />
+            </div>
+        </div>
+        <div class="row checkin-row">
+            <div class="col-lg-6 col-md-6">
+                <label>Room</label>
+                <input type="text" id="roomselect" required="true" />
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <label>Guest</label>
+                <input type="text" id="guestselect" required="true" />
+            </div>
+        </div>
+        <div>
+            <input id="submit" type="submit" value="Book now" class="btn btn-primary" onClick="myDialog.show();" />
+        </div>
+    </div>
+</div>
+</div>
+<div data-dojo-type="dijit/Dialog" data-dojo-id="myDialog" title="Name and Address">
+    <table class="dijitDialogPaneContentArea">
+        <tr>
+            <td><label for="name">Name:</label></td>
+            <td><input data-dojo-type="dijit/form/TextBox" name="name" id="name"></td>
+        </tr>
+        <tr>
+            <td><label for="address">Address:</label></td>
+            <td><input data-dojo-type="dijit/form/TextBox" name="address" id="address"></td>
+        </tr>
+    </table>
+
+    <div class="dijitDialogPaneActionBar">
+        <button data-dojo-type="dijit/form/Button" type="submit" id="ok">OK</button>
+        <button data-dojo-type="dijit/form/Button" type="button" data-dojo-props="onClick:function(){myDialog.hide();}"
+                id="cancel">Cancel</button>
+    </div>
+</div>
+</div>
