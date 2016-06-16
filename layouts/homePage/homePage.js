@@ -3,8 +3,7 @@ define([
     'dijit/_WidgetBase',
     'dijit/_TemplatedMixin',
     'dijit/_WidgetsInTemplateMixin',
-    'dojo/text!./template/homePage.html',
-    'dojo/hash',
+    'dojo/text!./template/HomePage.html',
     'dojo/on',
     'dojo/Evented',
     //Bijits Used in Template
@@ -18,18 +17,13 @@ define([
            _WidgetsInTemplateMixin,
            template
 ){
-    return declare('js.controllers.MainController',[_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin],{
+    return declare('layouts.homePage.HomePage',[_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin],{
         templateString:template,
         buildRendering: function(){
-            //FOR back function and setting hash on load
-            var _self=this;
             this.inherited(arguments);
         },
         postCreate: function(){
             this.inherited(arguments);
-
         }
-
     });
-
 });
