@@ -11,6 +11,10 @@ define([
         templateString:template,
         postCreate:function(){
             this.inherited(arguments);
+            // this._createDestination(/*resp*/);
+        },
+        _retrieveCityDetails: function(id){
+            topic.publish('hotel/select', id);
         }
     });
 });
