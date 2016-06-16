@@ -25,6 +25,7 @@ define([
     'dijit/layout/StackController',
     'dijit/layout/StackContainer',
     'dijit/layout/ContentPane',
+    'services/config/stepConfig',
 
     //Widgets used in template
     'layouts/header/Header',
@@ -51,7 +52,8 @@ define([
                _PageHandler,
                StackController,
                StackContainer,
-               ContentPane
+               ContentPane,
+               stepConfig
 
         ){
         return declare('js.controllers.MainController',[_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin,Evented,_PageHandler],{
@@ -87,14 +89,24 @@ define([
                     hash('home', true);
                 } else{
                     navUrl=currentUrl.split('#')[1];
-                   }
-                topic.subscribe('/dojo/hashchange',lang.hitch(this,function(e){
-                    this._pageNavigate(e);
-                }));
+                }
+                
                 if(navUrl){
                     this._pageNavigate(navUrl);
                 }
+                this._initEventListeners();
             },
+            _initEventListeners: function(){
+            topic.subscribe('/dojo/hashchange',lang.hitch(this,function(e){
+                    this._pageNavigate(e);
+            }));
+            topic.subscribe('hotel/select', lang.hitch(this, function(cityId){
+                //Service Call here
+            }));
+            topic.subscribe('navChange', lang.hitch(this, function(event){
+                this.navigationController(lang.getObject('srcElement.name', false, event));
+            }));
+        }
 
         });
 
