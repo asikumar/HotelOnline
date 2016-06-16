@@ -31,6 +31,9 @@ body {
 	background: rgba(22, 160, 133, .7);
 	padding: 10px 0;
 }
+#header a {
+	color: #464444;
+}
   /* Nav */
   .top-nav {
 	margin-top: 30px;
@@ -43,8 +46,7 @@ body {
 	text-shadow: 0 1px 0 rgba(0,0,0,0.25);
   }
   .navbar-nav>li>a:hover, 
-  .nav>li>a:focus,
-  .nav>li>a.active {
+  .nav>li>a:focus {
 	background: #1ABC9C;
   }
 .navbar-right {
@@ -56,9 +58,6 @@ body {
 	right: 15px;
 	top: 8px;
   }
-.contact-no a {
-	color: #464444;
-}
   .contact-no>span {
 	vertical-align: middle;
   }
@@ -306,20 +305,16 @@ body {
 }
 .button {
 	display: inline-block;
-	padding: 0.8em 2em;
+	padding: 10px 30px;
 	background: #16A085;
-	line-height: 1.8em;
+	line-height: 24px;
 	letter-spacing: 1px;
 	text-decoration: none;
-	font-size: 1em;
+	font-size: 15px;
 	color: #FFF;
 }
-.button:hover,
-.button:focus {
+.button:hover {
 	color: #fff;
-}
-.explore-cities-box .offer-col {
-	margin-bottom: 20px;
 }
 .offer-col {
 	overflow: hidden;
@@ -347,17 +342,26 @@ body {
 	font-size: 17px;
 	font-weight: normal;
 }
+.contact-form>li .dijitTextBox {
+	background: none;
+	border: none;
+	width: 100%;
+}
 .contact-form>li input[type=text],
 .contact-form>li textarea {
-	padding: 8px 10px;
+	padding: 10px !important;
 	width: 100%;
 	box-shadow: inset 0 2px 2px #ededed;
-	border: 1px solid #d8dce0;
+	border: 1px solid #d8dce0 !important;
 	color: #3b3b3b;
 	font-size: 15px;
 }
 .contact-form>li textarea {
-	height: 100px;
+	height: 100px !important;
+}
+.contact-form>li .dijitButtonNode {
+	background: none;
+	border: none;
 }
 .contact-form>li.ast:before {
 	color: #ff0000;
@@ -394,31 +398,8 @@ body {
 .aboutus-list li .about-photo p {
 	margin: 0;
 }
-.hotels-sec {
-	background: #F2F4F5;
-	padding: 20px 20px 0;
-}
-.sorting-box {
-	margin-bottom: 20px;
-	background: #fff;
-}
-.sorting-box a {
-	display: inline-block;
-	padding: 10px;
-}
-.sorting-box a:hover,
-.sorting-box a.active {
-	background: #F7F7F7;
-}
 
-/* Dialog */
-.soria .dijitDialog {
-	width: 800px;
-	z-index: 90000 !important;
-}
-.soria .dijitDialog .dijitDialogPaneContent {
-	height: 500px;
-}
-.dijitDialogUnderlayWrapper {
-	z-index: 9000 !important;
+#container-aboutus,
+#container-contactus {
+	margin-top: 110px;
 }

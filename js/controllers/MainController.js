@@ -1,142 +1,101 @@
+/**
+ * Created by khanjan on 6/5/2016.
+ */
 define([
     'dojo/_base/declare',
     'dijit/_WidgetBase',
     'dijit/_TemplatedMixin',
-    'dojo/Evented',
+    'dijit/_WidgetsInTemplateMixin',
+    'dojo/_base/lang',
     'dojo/text!./template/main.html',
-    'services/config/stepConfig',
+    'layouts/homePage/HomePage',
     'dojo/hash',
     'dojo/on',
+    'dojo/Evented',
     'dojo/topic',
-    'dojo/_base/lang',
-    'layouts/homePage/homePage',
-    'layouts/header/Header',
-    'layouts/footer/Footer',
-    'dojo/ready',
     'dojo/dom-construct',
-    'util/NavigationController',
-    //Bijits used in template
-    'dijit/layout/StackContainer',
+    'dojo/dom-class',
+    'dojo/cookie',
+    'dojo/ready',
+    'js/cities/Cities',
+    'js/check_in_out/CheckInOut',
+    'js/contactUs/ContactUs',
+    'dojo/text!templates/aboutUs/aboutUs.html',
+    './_PageHandler',
     'dijit/layout/StackController',
-    'dijit/layout/ContentPane'
-],function(declare,
-           _WidgetBase,
-           _TemplatedMixin,
-           Evented,
-           template,
-           stepConfig,
-           hash,
-           on,
-           topic,
-           lang,
-           homePage,
-           header,
-           footer,
-           ready,
-           domConstruct,
-           navControl
-){
-    return declare('js.controllers.MainController',[_WidgetBase, _TemplatedMixin, Evented , navControl],{
-        templateString:template,
-        node:null,
+    'dijit/layout/StackContainer',
+    'dijit/layout/ContentPane',
 
-        buildRendering: function(){
-            var _self=this;
-            this.inherited(arguments);
-        },
-        postCreate: function(){
-            this.inherited(arguments);
+    //Widgets used in template
+    'layouts/header/Header',
+    'layouts/footer/Footer'
+    ],function(declare,
+               _WidgetBase,
+               _TemplatedMixin,
+               _WidgetsInTemplateMixin,
+               lang,
+               template,
+               HomePage,
+               hash,
+               on,
+               Evented,
+               topic,
+               domConstruct,
+               domClass,
+               cookie,
+               ready,
+               Cities,
+               CheckInOut,
+               ContactUs,
+               aboutUs,
+               _PageHandler,
+               StackController,
+               StackContainer,
+               ContentPane
 
-            this._historyStack = [],  // application history stack
-                this._historyLen = 0,	 // current window.history length
-                this._current = null, 	// current history item in application history stack
-                this._next = null,		// next history item in application history stack
-                this._previous = null,	// previous history item in application history stack
-                this._index = 0,          //current hash index
-                new header().placeAt(this._headerContainer);
-            //new homePage().placeAt(this._widgetContainer);
-            new footer().placeAt(this._footerContainer);
-            hash('home', true);
+        ){
+        return declare('js.controllers.MainController',[_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin,Evented,_PageHandler],{
+            templateString:template,
+            buildRendering: function(){
+                this.inherited(arguments)
+                    this._homePage=new HomePage();
+                    this._cities=new Cities({"city":"e"});
+                    this._contactUsNode=new ContactUs();
 
-            var currentHash = window.location.hash;
-            if(currentHash && (currentHash.length > 1)){
-                currentHash = currentHash.substr(1);
-            }
-            this._current = currentHash;
-            this._initEventListeners();
-        },
-        _initEventListeners: function(){
-            topic.subscribe("/dojo/hashchange", lang.hitch(this, function(newhash){
-                this._onHashChange(newhash);
-            }));
-            topic.subscribe('hotel/select', lang.hitch(this, function(cityId){
-                //Service Call here
-            }));
-            topic.subscribe('navChange', lang.hitch(this, function(event){
-                this.navigationController(lang.getObject('srcElement.name', false, event));
-            }));
-        },
-        _onHashChange: function(newhash){
-            this._addHistory(newhash);
-            this._loadCurrentWidget(newhash);
-        },
-        _getCurrentHashWidget: function(newhash){
-            return stepConfig.steps[newhash].page;
-        },
-        _addHistory: function(hash) {
-            //Add hash to application history stack
-            this._historyStack.push({
-                "hash": hash
-            });
-            this._index = this._historyStack.length - 1;
-            if(!this._index > 0)
-                this._previous = this._current;
-            this._current = hash;
-            this._next = null;
-            console.log(this._historyStack);
-        },
-        _back: function(hash) {
-            this._next = this._historyStack[this._index]["hash"];
-            this._index--;
-            if (this._index > 0) {
-                this._previous = this._historyStack[this._index - 1]["hash"];
-            } else {
-                this._previous = null;
-            }
-            this._current = hash;
-            console.log('_back called');
-            //load Widget
-            this._loadCurrentWidget(hash);
+                    this.container=new StackContainer({id:"sc",doLayout:false}).placeAt(this._sectionContainer);
+                    var cp1=new ContentPane({content:this._homePage}),
+                        cp2=new ContentPane({content:this._cities}),
+                        cp3=new ContentPane({content:this._contactUsNode}),
+                        cp4=new ContentPane({content:aboutUs});
+                    this.container.addChild(cp1,0);
+                    this.container.addChild(cp2,1);
+                    this.container.addChild(cp3,2);
+                    this.container.addChild(cp4,3);
+                    this.cp2=cp2;
+                    this.cp1=cp1;
+                    this.cp3=cp3;
+                    this.cp4=cp4;
+                    var controller = new StackController({containerId:"sc"});
+                    controller.startup();
+                    this.container.startup();
+                    this.container.selectChild(cp1);
+                    },
+            postCreate: function() {
+                this.inherited(arguments);
+                var currentUrl=window.location.href,navUrl;
+                if (!(currentUrl.indexOf('#') > -1)) {
+                    hash('home', true);
+                } else{
+                    navUrl=currentUrl.split('#')[1];
+                   }
+                topic.subscribe('/dojo/hashchange',lang.hitch(this,function(e){
+                    this._pageNavigate(e);
+                }));
+                if(navUrl){
+                    this._pageNavigate(navUrl);
+                }
+            },
 
-        },
-        _forward: function(hash) {
-            this._previous = this._historyStack[this._index]["hash"];
-            this._index++;
-            if (this._index < this._historyStack.length - 1) {
-                this._next = this._historyStack[this._index + 1]["hash"];
-            } else {
-                this._next = null;
-            }
-            this._current = hash;
-            console.log('_forward called');
-            //load Widget
-            this._loadCurrentWidget(hash);
-        },
-        _loadCurrentWidget: function(newhash){
-            var widget = this._getCurrentHashWidget(newhash);
-            console.log('_loadCurrentWidget::'+newhash);
-            var self = this;
+        });
 
-            //load widget to current content pane
-            require([widget], function(page){
-                ready(function(){
-                    var stepTrackerObj = new page ({});
-                    stepTrackerObj.startup();
-
-                    domConstruct.place(stepTrackerObj.domNode, self._widgetPlaceHolder, 'last');
-                });
-            });
-        }
     });
-
-});
