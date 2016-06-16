@@ -16,6 +16,13 @@ define([
         _setCityAttr:{node:"_cityTitle",type:"innerHTML"},
         postCreate:function(){
             this.inherited(arguments);
-                  }
+        },
+        _clickHandler:function(city){
+            var self = this;
+            serviceWrapper.rtrvHotelsByCitydetail().then(function (rtrvHotelResponseData) {
+                console.log(rtrvHotelResponseData.success);
+                //self.set('hotel', rtrvHotelResponseData);
+            });
+        }
     });
 });
