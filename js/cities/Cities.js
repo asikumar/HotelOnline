@@ -8,9 +8,11 @@ define([
     'dojo/text!./template/Cities.html',
     'dojo/on',
     'dojo/_base/lang',
+
+    'services/serviceWrapper',
     'dojo/Evented'
-],function(declare,_WidgetBase,_TemplatedMixin,template,on,lang,Evented){
-    return declare('js.cities.Cities',[_WidgetBase,_TemplatedMixin,Evented],{
+],function(declare,_WidgetBase,_TemplatedMixin,template,on,lang,serviceWrapper,Evented){
+    return declare([_WidgetBase,_TemplatedMixin,Evented],{
         templateString:template,
         city:null,
         _setCityAttr:{node:"_cityTitle",type:"innerHTML"},
