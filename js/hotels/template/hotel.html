@@ -25,28 +25,59 @@
                     <div class="row checkin-row">
                         <div class="col-lg-6 col-md-6">
                             <label>Check-in</label>
-                            <input type="text" id="checkin-date" />
+                            <input type="text" id="checkin-date" data-dojo-type="dijit/form/DateTextBox"
+                                   required="true" />
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <label>Check-out</label>
-                            <input type="text" id="checkout-date" />
+                            <input type="text" id="checkout-date" data-dojo-type="dijit/form/DateTextBox"
+                                   required="true" />
                         </div>
                     </div>
                     <div class="row checkin-row">
                         <div class="col-lg-6 col-md-6">
                             <label>Room</label>
-                            <input type="text" id="roomselect" />
+                            <div id="roomselect" data-dojo-type="dijit/form/select"></div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <label>Guest</label>
-                            <input type="text" id="guestselect" />
+                            <div id="guestselect" data-dojo-type="dijit/form/select"></div>
                         </div>
                     </div>
                     <div>
-                        <input type="submit" value="Book now" class="btn btn-primary" />
+                        <input id="submit" type="submit" value="Book now" class="btn button" onClick="myDialog.show();" />
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div data-dojo-type="dijit/Dialog" data-dojo-id="myDialog">
+        <div class="col-lg-12 col-md-12">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <label>Check-in</label>
+                    <input type="text" id="checkin-date1" data-dojo-type="dijit/form/DateTextBox"
+                           required="true" />
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <label>Check-out</label>
+                    <input type="text" id="checkout-date1" data-dojo-type="dijit/form/DateTextBox"
+                           required="true" />
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <label>Room</label>
+                    <input type="text" id="roomselect1" required="true" />
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <label>Guest</label>
+                    <input type="text" id="guestselect1" required="true" />
+                </div>
+            </div>
+        </div>
+        <div class="dijitDialogPaneActionBar">
+            <button data-dojo-type="dijit/form/Button" type="submit" id="ok">OK</button>
+            <button data-dojo-type="dijit/form/Button" type="button" data-dojo-props="onClick:function(){myDialog.hide();}"
+                    id="cancel">Cancel</button>
         </div>
     </div>
 </div>

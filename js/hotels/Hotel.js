@@ -4,14 +4,26 @@ define([
     'dijit/_TemplatedMixin',
     'dojo/dom-construct',
     'dojo/_base/array',
-    'dojo/text!./template/hotel.html'
+    'dijit/_WidgetsInTemplateMixin',
+    'dojo/text!./template/hotel.html',
+    'dojo/topic',
+    'dijit/Dialog',
+    'dijit/form/Button',
+
+    'dijit/form/DateTextBox',
+    'dijit/form/select'
 ],function(declare,
            _WidgetBase,
            _TemplatedMixin,
            domConstruct,
            arrayUtil,
-           template){
-        return declare('js.hotels.Hotel',[_WidgetBase,_TemplatedMixin],{
+           _WidgetsInTemplateMixin,
+           template,
+           topic,
+           Dialog,
+           Button
+){
+        return declare('js.hotels.Hotel',[_WidgetBase,_TemplatedMixin,_WidgetsInTemplateMixin],{
             templateString:template,
             imageSource:'images/hotel1.jpg',
             nearByHotel:['images/image2.jpg','images/image2.jpg'],
@@ -19,6 +31,9 @@ define([
             /*TODO Service Call to get the response of hotel clicked by user*/
             postCreate:function(){
                 this.inherited(arguments);
+                topic.subscribe('hotel/select', function(id){
+                    console.log(id);
+                });
                 this._createAmmentiesList(/*response.ammenities*/);
                 this._createNearbyFacilities(/*response.locations*/);
                 this._createNearHotels();

@@ -10,14 +10,13 @@ define([
            domform,
            hotelConfig){
     return {
-        callService: function(value){
-            var config = hotelConfig['com.hotel.service'].rtrvHoteldetail;
+        callService: function(){
+            var config = hotelConfig['com.hotel.service'].rtrvDestns;
             return{
                 url: config.url,
-                data: null,
                 preventCache: false,
                 method: config.type,
-                handleAs: 'json',
+                handleAs: 'text',
                 timeout: 60000,
                 headers:{"Content-Type": config.contentType}
             };

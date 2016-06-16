@@ -1,0 +1,25 @@
+{
+  "cities": [
+      {
+        "imagURL": "images/hotel1.jpg",
+        "title": "Bhubaneswar",
+        "id": "bbsr"
+      },
+      {
+        "imagURL": "images/hotel1.jpg",
+        "title": "Puri",
+        "id": "puri"
+      },
+      {
+        "imagURL": "images/hotel1.jpg",
+        "title": "Chilika",
+        "id": "chlka"
+      },
+      {
+        "imagURL": "images/hotel1.jpg",
+        "title": "Gopalpur",
+        "id": "gppur"
+      }
+    ]
+
+}
