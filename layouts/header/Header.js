@@ -16,8 +16,8 @@ return declare('layouts.header.Header',[_WidgetBase,_TemplatedMixin,Evented],{
         this.inherited(arguments);
         var str;
         on(this.navHeader,'click',lang.hitch(this,function(e){
-            str=e.target.innerHTML.toLowerCase().replace(/\s+/g, '');
-           this.emit("show_"+str,str);
+            e.preventDefault();
+            topic.publish("navChange", e);
         }));
       }
 });
