@@ -43,7 +43,8 @@ body {
 	text-shadow: 0 1px 0 rgba(0,0,0,0.25);
   }
   .navbar-nav>li>a:hover, 
-  .nav>li>a:focus {
+  .nav>li>a:focus,
+  .nav>li>a.active {
 	background: #1ABC9C;
   }
 .navbar-right {
@@ -55,6 +56,9 @@ body {
 	right: 15px;
 	top: 8px;
   }
+.contact-no a {
+	color: #464444;
+}
   .contact-no>span {
 	vertical-align: middle;
   }
@@ -71,9 +75,10 @@ body {
   
   /* Footer */
   #footer {
-	background: #2e2d2d;
+	background: #16A085;
 	padding: 20px 0;
-	color: #5E5E5E;
+	color: #fff;
+	border-top: 1px solid #16DBB5;
 }
 .footer-menu {
 	list-style: none;
@@ -83,7 +88,7 @@ body {
 .footer-menu>a {
 	display: inline-block;
 	line-height: 18px;
-	color: #5E5E5E;
+	color: #000;
 	margin: 0 6px;
 }
 .footer-menu>a:first-child {
@@ -309,10 +314,111 @@ body {
 	font-size: 1em;
 	color: #FFF;
 }
-.button:hover {
+.button:hover,
+.button:focus {
 	color: #fff;
+}
+.explore-cities-box .offer-col {
+	margin-bottom: 20px;
 }
 .offer-col {
 	overflow: hidden;
 }
+.bottom-container {
+	background: #f3f3f3;
+	padding: 20px 0 25px;
+	border-bottom: 1px solid #8B8C8C;
+}
 
+/* Contact-Us */
+.contact-form {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.contact-form>li {
+	margin-bottom: 15px;
+	position: relative
+}
+.contact-form>li>label {
+	display: block;
+	margin-bottom: 8px;
+	color: #3b3b3b;
+	font-size: 17px;
+	font-weight: normal;
+}
+.contact-form>li input[type=text],
+.contact-form>li textarea {
+	padding: 8px 10px;
+	width: 100%;
+	box-shadow: inset 0 2px 2px #ededed;
+	border: 1px solid #d8dce0;
+	color: #3b3b3b;
+	font-size: 15px;
+}
+.contact-form>li textarea {
+	height: 100px;
+}
+.contact-form>li.ast:before {
+	color: #ff0000;
+	content: "";
+	font-weight: bold;
+	position: absolute;
+	right: 10px;
+	top: 48px;
+	background: url(../images/ast_icon.png) 0 0 no-repeat;
+	height: 9px;
+	width: 8px;
+}
+.aboutus-list {
+	margin: 0 0 20px;
+	padding: 0;
+	list-style: none;
+}
+.aboutus-list li {
+	padding: 20px;
+	font-size: 16px;
+	line-height: 25px;
+	overflow: hidden;
+}
+.aboutus-list li:nth-child(even) {
+	background: #F2F4F5;
+}
+.aboutus-list li .mng-photo {
+	background: #2d2d2d;
+	height: 250px;
+	width: 250px;
+	border-radius: 100%;
+	margin-bottom: 10px;
+}
+.aboutus-list li .about-photo p {
+	margin: 0;
+}
+.hotels-sec {
+	background: #F2F4F5;
+	padding: 20px 20px 0;
+}
+.sorting-box {
+	margin-bottom: 20px;
+	background: #fff;
+}
+.sorting-box a {
+	display: inline-block;
+	padding: 10px;
+}
+.sorting-box a:hover,
+.sorting-box a.active {
+	background: #F7F7F7;
+}
+
+/* Dialog */
+.soria .dijitDialog {
+	width: 800px;
+	z-index: 90000 !important;
+}
+.soria .dijitDialog .dijitDialogPaneContent {
+	height: 500px;
+}
+.dijitDialogUnderlayWrapper {
+	z-index: 9000 !important;
+}

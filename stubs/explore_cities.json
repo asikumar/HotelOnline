@@ -1,0 +1,10 @@
+{
+  "bbsr":{
+    "imagURL":"images/hotel1.jpg",
+    "headingText":"Hotel's in Bhubaneswar"
+  },
+  "puri":{
+    "imagURL":"images/hotel1.jpg",
+    "headingText":"Hotel's in Puri"
+  }
+}

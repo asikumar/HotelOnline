@@ -4,6 +4,16 @@ define({
             url:'../../stubs/hotel.json',
             type:'post',
             contentType:'application/json'
+        },
+        "rtrvDestns":{
+            url:'stubs/exploreOdisha.json',
+            type:'post',
+            contentType:'application/json'
+        },
+        "rtrvHotelsdetail":{
+            url:'stubs/hotellist.json',
+            type:'post',
+            contentType:'application/json'
         }
     }
 });

@@ -11,10 +11,10 @@ define([
            hotelConfig){
     return {
         callService: function(value){
-            var config = hotelConfig['com.hotel.service'].rtrvHoteldetail;
+            var config = hotelConfig['com.hotel.service'].rtrvHotelsdetail;
             return{
                 url: config.url,
-                data: null,
+                data: value,
                 preventCache: false,
                 method: config.type,
                 handleAs: 'json',
