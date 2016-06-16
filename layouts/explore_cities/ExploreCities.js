@@ -8,31 +8,30 @@ define([
     'dojo/text!./template/exploreCities.html',
     'dojo/on',
     'dojo/dom-attr',
-    'dojo/_base/lang',
-
-    'services/serviceWrapper'
-],function(declare, _WidgetBase, _TemplatedMixin, template, on, domAttr, lang, serviceWrapper){
-    return declare('layouts.explore_cities.ExploreCities',[_WidgetBase,_TemplatedMixin],{
+    'dojo/Evented',
+    'dojo/dom-construct',
+    'dojo/text!./template/singleCityTempl.html',
+    'dojo/_base/lang'
+],function(declare,_WidgetBase,_TemplatedMixin,template,on,domAttr,Evented,domConstruct,singleCityTempl,lang){
+    return declare('layouts.explore_cities.ExploreCities',[_WidgetBase,_TemplatedMixin,Evented],{
         templateString:template,
+        _citiesList:['bhubaneswar','puri'],
         postCreate:function(){
             this.inherited(arguments);
             var _self=this;
-            var cities = [ {attachPoint: 'bhubaneswar', value:'bbsr'},{attachPoint: 'puri', value:'puri'},
-                                {attachPoint: 'gopalpur', value:'gopalpur'}, {attachPoint: 'konark', value:'konark'}];
-            for(var i= 0; i< cities.length; i++){
-                var attachPoint= cities[i].attachPoint;
-                on(_self[attachPoint], 'click', lang.hitch(_self,_self._clickHandler,cities[i].value));
+            this._createCityView();
+
+
+                 },
+        _createCityView:function(){
+            for(var i= 0;i < this._citiesList.length;i++){
+                lang.replace(singleCityTempl,this._citiesList);
+                domConstruct.place(lang.replace(singleCityTempl,lang.hitch({_cities:this._citiesList},function (_,key){
+                    if(key==='cityName')
+                    return this._cities[i];
+                })),this._cityNode);
 
             }
-        },
-        _clickHandler:function(city){
-            var self = this;
-            serviceWrapper.rtrvHotelsByCitydetail().then(function (rtrvHotelResponseData) {
-                console.log(rtrvHotelResponseData.success);
-                //self.set('hotel', rtrvHotelResponseData);
-            });
-
         }
-
     });
 });
