@@ -23,7 +23,7 @@ define([
            Dialog,
            Button
 ){
-        return declare('js.hotels.Hotel',[_WidgetBase,_TemplatedMixin,_WidgetsInTemplateMixin],{
+        return declare([_WidgetBase,_TemplatedMixin,_WidgetsInTemplateMixin],{
             templateString:template,
             imageSource:'images/hotel1.jpg',
             nearByHotel:['images/image2.jpg','images/image2.jpg'],

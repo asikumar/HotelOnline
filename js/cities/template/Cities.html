@@ -1,6 +1,6 @@
 <div id="container-cities">
     <div class="container">
-        <div id="cities-container" class="sections details-box">
+        <div id="cities-container" class="sections details-box" data-dojo-attach-point="_cityDetailsSection">
             <h2 class="content-title" data-dojo-attach-point="_cityTitle"></h2>
             <div class="row city-info">
                 <div class="col-lg-8 col-md-8">
@@ -56,8 +56,14 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href="javascript:void(0)" class="btn button">Browse All</a>
+                <a href="javascript:void(0)" class="btn button" data-dojo-attach-point="_browseAllBtn">Browse All</a>
             </div>
         </div>
+        <div class="sections details-box" data-dojo-attach-point="_hotelDetailsSection">
+            <div class="row" data-dojo-attach-point="_hotelContainer">
+
+            </div>
+        </div>
+
     </div>
 </div>

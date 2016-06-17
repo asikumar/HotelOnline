@@ -5,12 +5,18 @@ define([
     'dojo/_base/declare',
     'dijit/_WidgetBase',
     'dijit/_TemplatedMixin',
+    'dojo/on',
+    'dojo/topic',
     'dojo/text!./template/footer.html'
-],function(declare,_WidgetBase,_TemplatedMixin,template){
-    return declare('layouts.footer.Footer',[_WidgetBase,_TemplatedMixin],{
+],function(declare,_WidgetBase,_TemplatedMixin,on, topic,template){
+    return declare([_WidgetBase,_TemplatedMixin],{
         templateString:template,
         postCreate:function(){
             this.inherited(arguments);
+            on(this._footerHotels,'click', function(e){
+                //e.preventDefault();
+                topic.publish("navChange", 'hotels');
+            });
         }
     });
 });

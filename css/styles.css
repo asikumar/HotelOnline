@@ -3,9 +3,9 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
-a, a:hover {
+a, a:hover, a:focus {
 	text-decoration: none;
-	color: #464444;
+	color: #16a085;
 }
 body {
   
@@ -31,7 +31,7 @@ body {
 	background: rgba(22, 160, 133, .7);
 	padding: 10px 0;
 }
-#header a {
+.contact-no a {
 	color: #464444;
 }
   /* Nav */

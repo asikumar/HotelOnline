@@ -26,11 +26,11 @@ define([
 
         return deferred.promise;
     };
-    serviceWrapper.rtrvHotelsdetail = function(){
+    serviceWrapper.rtrvHotelsdetail = function(data){
         var deferred = new Deferred();
         var result = {};
         var self = this;
-
+        console.log(data);
         var requestData = retrieveHotelsDetails.callService("hotels");
             xhr(requestData.url, requestData).then(
                 //Success
