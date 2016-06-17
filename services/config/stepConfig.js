@@ -1,30 +1,40 @@
 define({
-    steps : {
-            "home": {
-                page: 'layouts/homePage/homePage',
-                step: 0
-                
-            },
-            "hotels": {
-                page: 'js/hotels/Hotel',
-                step: 2
-            },
-            "deals": {
-                page: 'layouts/mainPage',
-                step: 2
-            },
-            "aboutUs": {
-                page: '../../layouts/mainPage',
-                step: 3
-            },
-            "contact": {
-                page: '../../layouts/mainPage',
-                step: 0
-            },
-            "city": {
-                page: 'js/cities/Cities',
-                step: 1
-            }
+    steps : [
+        {
+            hash: 'home',
+            page: 'layouts/homePage/HomePage',
+            step: 0
+
+        },
+
+        {
+            hash: 'city',
+            page: 'js/cities/Cities',
+            step: 1
+        },
+        {
+            hash: 'hotels',
+            page: 'js/hotels/Hotel',
+            step: 2
+        },
+        {
+            hash: 'contact',
+            page: 'js/contactUs/ContactUs',
+            step: 3
+        },
+
+        {
+            hash: 'aboutUs',
+            step: 4
         }
+        /* {
+         hash: 'deals',
+         page: 'layouts/mainPage',
+         step: 5
+         },*/
+
+
+
+    ]
 
 });
