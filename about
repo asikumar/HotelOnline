@@ -1,0 +1,66 @@
+<div id="container-aboutus">
+    <div class="container">
+        <div class="row">
+            <!--<ul class="aboutus-list">
+                <li>
+                    <div class="col-lg-3 col-md-3 about-photo">
+                        <div class="mng-photo">&nbsp;</div>
+                        <p><a href="javascript:void(0)">Badri Narayan Sahoo.</a></p>
+                        <p>CEO</p>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis dolor fringilla,
+                            pellentesque nibh placerat, mattis erat. Mauris sed enim pharetra, efficitur augue non, euismod lectus.
+                            In dictum lacinia feugiat. Mauris sit amet purus lorem. Nulla accumsan libero enim, et scelerisque quam
+                            consequat vitae. Nulla ut dolor eget velit suscipit cursus vel ut metus. Praesent nisl mi, pharetra at
+                            eros a, vestibulum maximus odio. Proin id scelerisque enim.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis dolor fringilla,
+                            pellentesque nibh placerat, mattis erat. Mauris sed enim pharetra, efficitur augue non, euismod lectus.
+                            In dictum lacinia feugiat. Mauris sit amet purus lorem. Nulla accumsan libero enim, et scelerisque quam
+                            consequat vitae. Nulla ut dolor eget velit suscipit cursus vel ut metus. Praesent nisl mi, pharetra at
+                            eros a, vestibulum maximus odio. Proin id scelerisque enim.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="col-lg-3 col-md-3 about-photo">
+                        <div class="mng-photo">&nbsp;</div>
+                        <p><a href="javascript:void(0)">Badri Narayan Sahoo</a></p>
+                        <p>CEO</p>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis dolor fringilla,
+                            pellentesque nibh placerat, mattis erat. Mauris sed enim pharetra, efficitur augue non, euismod lectus.
+                            In dictum lacinia feugiat. Mauris sit amet purus lorem. Nulla accumsan libero enim, et scelerisque quam
+                            consequat vitae. Nulla ut dolor eget velit suscipit cursus vel ut metus. Praesent nisl mi, pharetra at
+                            eros a, vestibulum maximus odio. Proin id scelerisque enim.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis dolor fringilla,
+                            pellentesque nibh placerat, mattis erat. Mauris sed enim pharetra, efficitur augue non, euismod lectus.
+                            In dictum lacinia feugiat. Mauris sit amet purus lorem. Nulla accumsan libero enim, et scelerisque quam
+                            consequat vitae. Nulla ut dolor eget velit suscipit cursus vel ut metus. Praesent nisl mi, pharetra at
+                            eros a, vestibulum maximus odio. Proin id scelerisque enim.</p>
+                    </div>
+                </li>
+            </ul>-->
+            <h3>
+                About Shinestay.com:
+            </h3><br/>
+            <p>
+                On Mon 7/4/2016 8:01 PM, Odisha's first Hotel website was born.</p>
+            <p>Every great journey starts with a single step.
+                It may come as a surprise to you, but at that time we did not have our own domain. We actually rented space on another website.
+                Struggling for the domain name only was quite a good experience
+                and we finally made a decision to acquire shinestay.com after 2 month post half the website was built.</p>
+               <p>It is an indian portal to reflect true Odisha.</p>
+            <p>Shinestay is the online hotels booking engine in Odisha . Shinestay is one of the upcoming startup for Hotel industry in Odisha cirlce for the time being.
+                Sinestay's core value differentiator is delivery of the fastest and the most trusted user experiences, be it in terms of quickest
+                search and booking, fastest payments, settlement and refund processes.
+            </p>
+            <p>Based in Bhubaneswar, the temple city and Capital of Odisha, Shinestay believes that business should be empowered with a futuristic vision. Best quality and affordability with a great client satisfaction beyond imagination has helped Shinestay a lot to present in every corner of Odisha.</p>
+            <p>With over hundreds of thousands of hotel partners Odisha, travellers can book everything they need for a holiday - rooms to meet every budget, activities of every kind and travel services to complement.</p>
+            <p>The site has a special and dedicated team to provide  the contents and events happening in Odisha and provide better facility to
+            the visitors over here.</p>
+<p>We also take this opportunity to thank our regular guests, for whom this website aims to provide all kind of information. We welcome your suggestions to help us serve you better.</p>
+
+        </div>
+    </div>
+</div>
