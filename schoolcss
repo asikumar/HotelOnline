@@ -1,0 +1,23 @@
+/* School Info */
+#school-information, #container-contactus {margin: 30px 0}
+.contact-list {padding: 10px 0}
+.contact-list li {margin: 0 0 10px}
+.contact-list li a {color: #cc0000}
+
+#school-information .button-link {width: 100%}
+
+.like-icon {font-size: 25px}
+.like-icon a {color: #eb0c0c; vertical-align: middle}
+.like-icon a:hover, .like-icon a:active {color: #cc0000}
+.like-icon span {font-size: 18px}
+
+.google-map {border: 1px solid #ddd; padding: 2px; margin-top: 20px}
+.google-map iframe {width: 100%;}
+
+/* Contact-Us */
+.contact-form {margin: 0; padding: 0; list-style: none;}
+.contact-form>li {margin-bottom: 1em; position: relative}
+.contact-form>li:last-child {margin: 0;}
+.contact-form>li>label {display: block; margin-bottom: 8px; color: #3b3b3b; font-size: 16px; font-weight: normal;}
+.contact-form>li textarea, .contact-form>li input[type=text] {width: 100%; box-shadow: inset 0 2px 2px #ededed;
+    border: 1px solid #d8dce0 !important; color: #3b3b3b; font-size: 16px; background: #fff; padding: 10px;}
